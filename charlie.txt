@@ -1,2 +1,25 @@
 #initialize a repo with
 git init
+
+#after adding a few files and committing each time you can reset to a particular commit
+
+#find the commit ID's
+git reflog
+
+git reset --hard c3aa8bf
+#note: even after a reset, you can go back to a previous commits if needed. Git does not remove files very easily
+
+#'git revert' surgically removes things that happened in a particular commit. so if you revert the third commit, the third file is gone but the fourth one is kept
+git revert 525ecb1
+#Note: if you are stuck on a VI editor, type :q to get out
+
+#cherry-pick is the opposite of revert. It brings back a file done in a commit
+git cherry-pick 525ecb1
+
+#upload files to newly created (empty) GitHub repository
+#renames master to main
+git branch -M main 
+
+git remote add GitHub https://github.com/jkusnadi/no-more-fear.git
+git push -u GitHub main
+
